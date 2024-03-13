@@ -1,5 +1,9 @@
 ﻿namespace Calculadora.ConsoleApp
 {
+    // TESTE DE BRANCH E ENVIO
+    // ola mundo este e um teste de envio 
+
+
     //Requesito 01 (OK)
     //Pegar dois numeros
 
@@ -36,18 +40,18 @@
                 Console.WriteLine("Digite 2 para Subtração");
                 Console.WriteLine("Digite 3 para Divisão");
                 Console.WriteLine("Digite 4 para Multiplicação");
-                Console.WriteLine("Digite S para sair");
+                Console.WriteLine("Digite 0 para sair");
 
                 string operacao = Console.ReadLine();
 
-                if (!(operacao == "1" || operacao == "2" || operacao == "3" || operacao == "4" || operacao == "S"))
+                if (!(operacao == "1" || operacao == "2" || operacao == "3" || operacao == "4" || operacao == "0"))
                 {
                     Console.WriteLine("Opção invalida");
                     Console.ReadLine();
                     continue;
                 }
 
-                if (operacao == "S")
+                if (operacao == "0")
                 {
                     break;
                 }
