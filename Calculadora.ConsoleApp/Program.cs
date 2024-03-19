@@ -30,28 +30,20 @@
         static void Main(string[] args)
         {
 
+            string operacao = mostrarMenu();
+
+            #region 
             while (true)
             {
-                Console.Clear();
 
-                Console.WriteLine("Bem-Vindo a Calculadora!\n");
-
-                Console.WriteLine("Digite 1 para Adição");
-                Console.WriteLine("Digite 2 para Subtração");
-                Console.WriteLine("Digite 3 para Divisão");
-                Console.WriteLine("Digite 4 para Multiplicação");
-                Console.WriteLine("Digite 0 para sair");
-
-                string operacao = Console.ReadLine();
-
-                if (!(operacao == "1" || operacao == "2" || operacao == "3" || operacao == "4" || operacao == "0"))
+                if (!(operacao == "1" || operacao == "2" || operacao == "3" || operacao == "4" || operacao == "S" || operacao == "s"))
                 {
                     Console.WriteLine("Opção invalida");
                     Console.ReadLine();
                     continue;
                 }
 
-                if (operacao == "0")
+                if (opcaoSaidaSelecionada(operacao))
                 {
                     break;
                 }
@@ -109,9 +101,34 @@
                 //Não remover esta linha (manter console aberto)
                 Console.ReadLine();
             }
-
-
+            #endregion
 
         }
+
+        static string mostrarMenu(){
+            //PROCEDIMENTO = conjunto de instrucoes que executam em sequencia
+            // FUNCAO = um PROCEDIMENTO que retorna um valor
+              Console.Clear();
+
+                Console.WriteLine("Bem-Vindo a Calculadora!\n");
+
+                Console.WriteLine("Digite 1 para Adição");
+                Console.WriteLine("Digite 2 para Subtração");
+                Console.WriteLine("Digite 3 para Divisão");
+                Console.WriteLine("Digite 4 para Multiplicação");
+                Console.WriteLine("Digite s para sair");
+
+                string operacao = Console.ReadLine();
+
+                return operacao;
+        }
+
+        // funcao com argumento
+       static bool opcaoSaidaSelecionada(string opcao)
+        {
+            bool opcaoSaidaSelecionada = opcao == "S" || opcao == "s";
+
+            return opcaoSaidaSelecionada;
+        } 
     }
 }
