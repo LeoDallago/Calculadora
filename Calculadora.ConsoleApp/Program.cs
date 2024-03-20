@@ -31,7 +31,7 @@
 
                 string operacao = MostrarMenu();
 
-                if (!(operacao == "1" || operacao == "2" || operacao == "3" || operacao == "4" || operacao == "S" || operacao == "s"))
+                if (OpcaoInvalida(operacao))
                 {
                     Console.WriteLine("Opção invalida");
                     Console.ReadLine();
@@ -97,6 +97,10 @@
                 Console.ReadLine();
             }
 
+            //PROCEDIMENTO = conjunto de instrucoes que executam em sequencia
+            // FUNCAO = um PROCEDIMENTO que retorna um valor
+
+            //PROCEDIMENTO DE MENU
             static string MostrarMenu()
             {
                 Console.Clear();
@@ -114,11 +118,19 @@
                 return operacao;
             }
 
+            // funcao com argumento
             static bool OpcaoSair(string opcao)
             {
                 bool opcaoSair = opcao == "S" || opcao == "s";
 
                 return opcaoSair;
+            }
+
+            static bool OpcaoInvalida(string opcao)
+            {
+                bool opcaoInvalida = !(opcao == "1" || opcao == "2" || opcao == "3" || opcao == "4" || opcao == "S" || opcao == "s");
+
+                return opcaoInvalida;
             }
 
         }
